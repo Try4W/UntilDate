@@ -3,8 +3,8 @@
 
     <!-- fragment_notes_list -->
 
-    <string name="dates_list_fragment_title">Твои планы</string>
-    <string name="empty_dates_list">Добавленные даты будут отображаться здесь</string>
+    <string name="dates_list_fragment_title">Your plans</string>
+    <string name="empty_dates_list">Added date will be displayed here</string>
 
     <plurals name="days">
         <item quantity="zero">%1$d дней</item>
@@ -42,58 +42,58 @@
         <item quantity="other">%1$d секунд</item>
     </plurals>
 
-    <string name="date_occurred">Дата наступила &lt;3</string> <!-- &lt; equals less than -->
+    <string name="date_occurred"><![CDATA[The time has come <3]]></string> <!-- &lt; equals less than -->
 
     <!-- notes_list_fragment_menu -->
 
-    <string name="switch_mode">Сменить режим</string>
-    <string name="rate">Оставить отзыв</string>
-    <string name="info">Информация</string>
+    <string name="switch_mode">Switch mode</string>
+    <string name="rate">Rate</string>
+    <string name="info">Info</string>
 
     <!-- notes_list_fragment_notifications -->
 
-    <string name="edit_hints">Коснись даты для редактирования</string>
+    <string name="edit_hints">Touch item to edit</string>
 
-    <string name="date_removed">Дата удалена</string>
-    <string name="undo">Отмена</string>
+    <string name="date_removed">Date removed</string>
+    <string name="undo">Undo</string>
 
     <!-- activity_add_note -->
 
-    <string name="toolbar_add_title">Добавить</string>
-    <string name="title_hint">Название события</string>
-    <string name="no_date">Дата не указана</string>
-    <string name="change_date">Указать дату</string>
-    <string name="no_color">Цвет не указан</string>
-    <string name="change_color">Указать цвет</string>
-    <string name="pick_color_title">Выбери цвет</string>
-    <string name="save_note">Сохранить</string>
+    <string name="toolbar_add_title">Add</string>
+    <string name="title_hint">Date title</string>
+    <string name="no_date"> Date not specified</string>
+    <string name="change_date">Pick date</string>
+    <string name="no_color">Color not specified</string>
+    <string name="change_color">Pick color</string>
+    <string name="pick_color_title">Pick color</string>
+    <string name="save_note">Save</string>
 
-    <string name="warning_no_title">Эй, укажи название даты</string>
-    <string name="warning_date_in_past">Эй, ты пытаешься создать событие в прошлом. Думай о будущем!</string>
-    <string name="warning_no_date">Эй, укажи дату!</string>
+    <string name="warning_no_title">Hey, type a name of date!</string>
+    <string name="warning_date_in_past">Hey, you\'re trying to create an event in the past. Think of the future!</string>
+    <string name="warning_no_date">Hey, pick a date!</string>
 
     <!-- activity_edit_note -->
 
-    <string name="toolbar_edit_title">Изменить</string>
+    <string name="toolbar_edit_title">Edit</string>
 
     <!-- info_dialog -->
 
-    <string name="contacts">Контакты</string>
-    <string name="version">Версия</string>
-    <string name="contact_vk">Вконтакте</string>
+    <string name="contacts">Contacts</string>
+    <string name="version">Version</string>
+    <string name="contact_vk">Vkontakte</string>
     <string name="contact_vk_address">vk.com/try4w</string>
     <string name="contact_skype">Skype</string>
     <string name="contact_skype_login">alexandr2levin</string>
     <string name="contact_telegram">Telegram</string>
     <string name="contact_telegram_id">try4w</string>
-    <string name="cancel">Скрыть</string>
+    <string name="cancel">Cancel</string>
 
     <!-- color -->
-    <string name="gray">Серый</string>
-    <string name="indigo">Индиго</string>
-    <string name="blue">Голубой</string>
-    <string name="green">Зеленый</string>
-    <string name="brown">Коричневый</string>
-    <string name="orange">Ораньжевый</string>
+    <string name="gray">Gray</string>
+    <string name="indigo">Indigo</string>
+    <string name="blue">Blue</string>
+    <string name="green">Green</string>
+    <string name="brown">Brown</string>
+    <string name="orange">Orange</string>
 
 </resources>
