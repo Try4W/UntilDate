@@ -1,3 +1,4 @@
 include ':app', ':gapview'
 include ':android-colorpicker'
-project(':android-colorpicker').projectDir = new File('libs/android-colorpicker/app')
+project(':android-colorpicker').projectDir = new File('android-colorpicker/app')
+project(':gapview').projectDir = new File('GapView/library')
