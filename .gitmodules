@@ -1,0 +1,6 @@
+[submodule "android-colorpicker"]
+	path = android-colorpicker
+	url = https://github.com/woalk/android-colorpicker.git
+[submodule "GapView"]
+	path = GapView
+	url = https://github.com/Try4W/GapView
