@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/coordinator_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:src="@drawable/ic_calendar_grey600_36dp"
+                    android:id="@+id/calendar_image" />
+
+                <TextView
+                    android:id="@+id/date_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/no_date"
+                    android:layout_marginLeft="9dp"
+                    android:layout_marginStart="9dp"
+                    android:layout_alignBottom="@+id/calendar_image"
+                    android:layout_toRightOf="@+id/calendar_image"
+                    android:layout_toEndOf="@+id/calendar_image"
+                    android:layout_marginBottom="10dp" />
+
+                <Button
+                    android:id="@+id/pick_date_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start|center_vertical"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/change_date"
+                    android:layout_marginEnd="40dp"
+                    android:layout_marginRight="40dp"
+                    android:layout_below="@+id/date_text"
+                    android:layout_marginStart="80dp"
+                    android:layout_marginLeft="80dp"/>
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:gravity="center_vertical">
+
+                <View
+                    android:id="@+id/color_view"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_margin="20dp"
+                    android:background="@drawable/circle_view"/>
+
+                <TextView
+                    android:id="@+id/color_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/no_color"
+                    android:layout_marginLeft="9dp"
+                    android:layout_marginStart="9dp"
+                    android:layout_alignBottom="@+id/color_view"
+                    android:layout_toRightOf="@+id/color_view"
+                    android:layout_toEndOf="@+id/color_view"
+                    android:layout_marginBottom="10dp" />
+
+                <Button
+                    android:id="@+id/pick_color_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start|center_vertical"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/change_color"
+                    android:layout_marginEnd="40dp"
+                    android:layout_marginRight="40dp"
+                    android:layout_below="@+id/color_text"
+                    android:layout_marginStart="80dp"
+                    android:layout_marginLeft="80dp"/>
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ToolBarStyle"
+            app:title="@string/toolbar_add_title"
+            app:theme="@style/ToolBarStyle"
+            app:popupTheme="@style/PopupMenuStyle"/>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/title_edit_text_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:theme="@style/EditTextStyle">
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/title_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/title_hint"
+                android:inputType="text"
+                android:maxLength="20"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+</android.support.design.widget.CoordinatorLayout>
