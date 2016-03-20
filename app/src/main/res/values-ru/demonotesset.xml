@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="demo_notes">
+        <item>Домой &lt;3</item> <!-- &lt; equals less than -->
+        <item>Новый год</item>
+        <item>Новая работа</item>
+        <item>Купить гитару</item>
+        <item>Взять кота</item>
+        <item>Накидаться</item>
+        <item>Вписка</item>
+        <item>Первый секс</item>
+    </string-array>
+
+</resources>

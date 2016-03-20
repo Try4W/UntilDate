@@ -14,6 +14,9 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ProgressBar;
 
 import org.flycraft.android.untildate.BuildConfig;
 import org.flycraft.android.untildate.NoteColors;
@@ -47,9 +50,9 @@ public class MainActivity extends AppCompatActivity {
         coordinatorLayout = (CoordinatorLayout) findViewById(R.id.coordinator_layout);
         appBarLayout = (AppBarLayout) findViewById(R.id.appbar_layout);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
         fab = (FloatingActionButton) findViewById(R.id.fab);
 
+        setSupportActionBar(toolbar);
         actionBar = getSupportActionBar();
         ActionBar actionBar = getSupportActionBar();
         if(actionBar == null) {

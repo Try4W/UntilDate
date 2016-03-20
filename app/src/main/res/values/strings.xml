@@ -4,7 +4,7 @@
     <!-- fragment_notes_list -->
 
     <string name="dates_list_fragment_title">Your plans</string>
-    <string name="empty_dates_list">Added date will be displayed here</string>
+    <string name="empty_dates_list">Added dates will be displayed here</string>
 
     <plurals name="days">
         <item quantity="zero">%1$d дней</item>

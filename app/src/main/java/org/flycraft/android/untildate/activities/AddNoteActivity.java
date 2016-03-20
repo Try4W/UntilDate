@@ -200,7 +200,9 @@ public class AddNoteActivity extends AppCompatActivity {
     }
 
     private void animateUiColor(int color) {
-        ToolbarColorizer.colorizeTo(getWindow(), NoteColors.getDark(color));
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+            ToolbarColorizer.colorizeTo(getWindow(), NoteColors.getDark(color));
+        }
         ToolbarColorizer.colorizeTo(toolbar, color);
         ToolbarColorizer.colorizeTo(appBarLayout, color);
         setColorImageViewColor(color);
@@ -294,12 +296,16 @@ public class AddNoteActivity extends AppCompatActivity {
     @Override
     public void onActionModeStarted(ActionMode mode) {
         super.onActionModeStarted(mode);
-        ToolbarColorizer.colorizeTo(getWindow(), NoteColors.gray_dark); // Set nice color for ActionMenu
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+            ToolbarColorizer.colorizeTo(getWindow(), NoteColors.gray_dark); // Set suitable color for ActionMenu
+        }
     }
 
     @Override
     public void onActionModeFinished(ActionMode mode) {
         super.onActionModeFinished(mode);
-        ToolbarColorizer.colorizeTo(getWindow(), NoteColors.getDark(note.getColor())); // Set normal color for selected
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+            ToolbarColorizer.colorizeTo(getWindow(), NoteColors.getDark(note.getColor())); // Set normal color for selected
+        }
     }
 }

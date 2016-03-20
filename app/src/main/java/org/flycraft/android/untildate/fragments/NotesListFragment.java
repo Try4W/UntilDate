@@ -18,7 +18,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.flycraft.android.gapview.GapView;
 import org.flycraft.android.untildate.NoteColors;
 import org.flycraft.android.untildate.R;
 import org.flycraft.android.untildate.activities.AddNoteActivity;
@@ -29,7 +28,6 @@ import org.flycraft.android.untildate.data.NotesStorage;
 import org.flycraft.android.untildate.fragments.other.ItemTouchHelperAdapter;
 import org.flycraft.android.untildate.fragments.other.NotesListAdapter;
 import org.flycraft.android.untildate.fragments.other.SimpleItemTouchHelperCallback;
-import org.flycraft.android.untildate.fragments.other.ListTopSpaceDecoration;
 import org.joda.time.DateTime;
 
 import java.util.Collections;
@@ -46,14 +44,13 @@ public class NotesListFragment extends Fragment {
 
     private MainActivity mainActivity;
 
-    private GapView gapView;
     private RecyclerView notesRecyclerView;
     private RecyclerView.LayoutManager notesListLayoutManager;
     private NotesListAdapter notesListAdapter;
+    private TextView gapTextView;
     private ItemTouchHelper itemTouchHelper;
     private SimpleItemTouchHelperCallback itemTouchHelperCallback;
     private FloatingActionButton fab;
-    private MenuItem putDebugDataItem;
     private MenuItem switchItem;
 
     private NotesStorage storage = NotesStorage.getInstance();
@@ -75,11 +72,11 @@ public class NotesListFragment extends Fragment {
         mainActivity = (MainActivity) getActivity();
 
         if(MainActivity.isDebugMode() && storage.getNotes().isEmpty()) {
-            addDefaultDatesSet();
+            addDemoNotesSet();
         }
 
-        gapView = (GapView) view.findViewById(R.id.gap);
         notesRecyclerView = (RecyclerView) view.findViewById(R.id.notes_list);
+        gapTextView = (TextView) view.findViewById(R.id.gap_text_view);
         setupNotesList();
         setupTouchHelper();
         //fillNotesList();
@@ -96,19 +93,30 @@ public class NotesListFragment extends Fragment {
     }
 
     private void updateGapState() {
-        gapView.setShowGap(isNotesListEmpty());
+        setGapState(isNotesListEmpty());
     }
 
-    private void addDefaultDatesSet() {
+    private void setGapState(boolean state) {
+        if(state) {
+            notesRecyclerView.setVisibility(View.GONE);
+            gapTextView.setVisibility(View.VISIBLE);
+        } else {
+            notesRecyclerView.setVisibility(View.VISIBLE);
+            gapTextView.setVisibility(View.GONE);
+        }
+    }
+
+    private void addDemoNotesSet() {
         List<Note> notes = storage.getNotes();
-        notes.add(new Note("Домой <3", DateTime.now().plusDays(2), NoteColors.green));
-        notes.add(new Note("Новый год", DateTime.now().plusYears(1).plusDays(2), NoteColors.indigo));
-        notes.add(new Note("Новая работа", DateTime.now().plusYears(1).plusDays(1), NoteColors.orange));
-        notes.add(new Note("Взять гитару", DateTime.now().plusDays(30), NoteColors.brown));
-        notes.add(new Note("Купить кота", DateTime.now().plusDays(30), NoteColors.gray));
-        notes.add(new Note("Накидаться", DateTime.now().plusDays(20), NoteColors.blue));
-        notes.add(new Note("Вписон", DateTime.now().plusDays(7), NoteColors.orange));
-        notes.add(new Note("Первый секс", DateTime.now().plusYears(1), NoteColors.blue));
+        String[] demoDates = getResources().getStringArray(R.array.demo_notes);
+        notes.add(new Note(demoDates[0], DateTime.now().plusDays(2), NoteColors.green));
+        notes.add(new Note(demoDates[1], DateTime.now().plusYears(1).plusDays(2), NoteColors.indigo));
+        notes.add(new Note(demoDates[2], DateTime.now().plusYears(1).plusDays(1), NoteColors.orange));
+        notes.add(new Note(demoDates[3], DateTime.now().plusDays(30), NoteColors.brown));
+        notes.add(new Note(demoDates[4], DateTime.now().plusDays(30), NoteColors.gray));
+        notes.add(new Note(demoDates[5], DateTime.now().plusDays(20), NoteColors.blue));
+        notes.add(new Note(demoDates[6], DateTime.now().plusDays(7), NoteColors.orange));
+        notes.add(new Note(demoDates[7], DateTime.now().plusYears(1), NoteColors.blue));
     }
 
     private void addDebugListElement() {
@@ -140,8 +148,6 @@ public class NotesListFragment extends Fragment {
 
     private void setupNotesList() {
         notesRecyclerView.setHasFixedSize(true);
-
-        notesRecyclerView.addItemDecoration(new ListTopSpaceDecoration(5));
 
         notesListLayoutManager = new LinearLayoutManager(getActivity());
         notesRecyclerView.setLayoutManager(notesListLayoutManager);
@@ -272,10 +278,6 @@ public class NotesListFragment extends Fragment {
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        if(isDebugMode()) {
-            putDebugDataItem = menu.add(0, 1338, 1, "ADI");
-            putDebugDataItem.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
-        }
         switchItem = menu.add(0, 1337, 0, R.string.switch_mode).setIcon(R.drawable.eye);
         switchItem.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
         super.onCreateOptionsMenu(menu, inflater);
@@ -285,10 +287,6 @@ public class NotesListFragment extends Fragment {
     public boolean onOptionsItemSelected(MenuItem item) {
         if(switchItem.getItemId() == item.getItemId()) {
             switchEditMode();
-            return true;
-        }
-        if(isDebugMode() && putDebugDataItem.getItemId() == item.getItemId()) {
-            addDebugListElement();
             return true;
         }
         return super.onOptionsItemSelected(item);

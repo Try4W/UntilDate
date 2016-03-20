@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="demo_notes">
+        <item>Homecoming &lt;3</item> <!-- &lt; equals less than -->
+        <item>Christmas</item>
+        <item>New job</item>
+        <item>Buy a guitar</item>
+        <item>Get a cat</item>
+        <item>Get drunk</item>
+        <item>Party</item>
+        <item>First sex</item>
+    </string-array>
+
+</resources>
