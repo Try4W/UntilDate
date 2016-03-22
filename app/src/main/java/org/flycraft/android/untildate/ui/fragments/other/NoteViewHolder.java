@@ -1,29 +1,20 @@
-package org.flycraft.android.untildate.fragments.other;
+package org.flycraft.android.untildate.ui.fragments.other;
 
-import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
 import org.flycraft.android.untildate.R;
-import org.flycraft.android.untildate.activities.EditNoteActivity;
 import org.flycraft.android.untildate.data.Note;
-import org.flycraft.android.untildate.fragments.NotesListFragment;
 import org.joda.time.DateTime;
 import org.joda.time.Days;
 import org.joda.time.Period;
-import org.joda.time.format.PeriodFormatter;
-import org.joda.time.format.PeriodFormatterBuilder;
 
-import java.util.Timer;
-import java.util.TimerTask;
-import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;

@@ -1,6 +1,5 @@
-package org.flycraft.android.untildate.activities;
+package org.flycraft.android.untildate.ui.activities.addnote;
 
-import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.graphics.PorterDuff;
@@ -16,11 +15,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatEditText;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.support.v7.widget.helper.ItemTouchHelper;
-import android.text.TextUtils;
-import android.util.Log;
 import android.view.ActionMode;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -44,9 +39,9 @@ import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 
-public class AddNoteActivity extends AppCompatActivity {
+public class AddNewNoteActivity extends AppCompatActivity {
 
-    private static final String TAG = "AddNoteActivity";
+    private static final String TAG = "AddNewNoteActivity";
 
     private CoordinatorLayout coordinatorLayout;
     protected ActionBar actionBar;
@@ -68,7 +63,7 @@ public class AddNoteActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_note);
 
         coordinatorLayout = (CoordinatorLayout) findViewById(R.id.coordinator_layout);
-        appBarLayout = (AppBarLayout) findViewById(R.id.appbar_layout);
+        appBarLayout = (AppBarLayout) findViewById(R.id.app_bar_layout);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 

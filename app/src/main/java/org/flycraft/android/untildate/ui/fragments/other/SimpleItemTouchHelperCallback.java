@@ -1,9 +1,7 @@
-package org.flycraft.android.untildate.fragments.other;
+package org.flycraft.android.untildate.ui.fragments.other;
 
-import android.graphics.Canvas;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
-import android.util.Log;
 
 public class SimpleItemTouchHelperCallback extends ItemTouchHelper.Callback {
 

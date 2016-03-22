@@ -1,7 +1,6 @@
-package org.flycraft.android.untildate.fragments.other;
+package org.flycraft.android.untildate.ui.fragments.other;
 
 import android.support.v7.widget.RecyclerView;
-import android.view.View;
 
 public interface ItemTouchHelperAdapter {
 

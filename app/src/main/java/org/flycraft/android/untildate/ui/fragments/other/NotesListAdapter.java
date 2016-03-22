@@ -1,21 +1,14 @@
-package org.flycraft.android.untildate.fragments.other;
+package org.flycraft.android.untildate.ui.fragments.other;
 
-import android.support.v4.view.MotionEventCompat;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
-import android.view.DragEvent;
-import android.view.GestureDetector;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 
 import org.flycraft.android.untildate.R;
 import org.flycraft.android.untildate.data.Note;
-import org.flycraft.android.untildate.fragments.NotesListFragment;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class NotesListAdapter extends RecyclerView.Adapter<NoteViewHolder> {
@@ -24,10 +17,6 @@ public class NotesListAdapter extends RecyclerView.Adapter<NoteViewHolder> {
 
     private List<Note> notes;
     private OnItemClickListener itemClickListener;
-
-    public NotesListAdapter(List<Note> notes) {
-        this.notes = new ArrayList<>(notes);
-    }
 
     @Override
     public NoteViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -59,16 +48,18 @@ public class NotesListAdapter extends RecyclerView.Adapter<NoteViewHolder> {
         return notes.size();
     }
 
-    public void appendNote(Note note) {
-        addNote(0, note);
+    public void setNotes(List<Note> notes) {
+        this.notes = new ArrayList<>(notes);
+        notifyDataSetChanged();
     }
 
-    public void addNote(int position, Note note) {
-        boolean isFirstItem = notes.isEmpty();
+    public void appendNote(Note note) {
+        insertNote(0, note);
+    }
+
+    public void insertNote(int position, Note note) {
         notes.add(position, note);
-        if(!isFirstItem) {
-            notifyItemInserted(0);
-        }
+        notifyItemInserted(position);
     }
 
     public List<Note> getNotes() {

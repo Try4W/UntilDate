@@ -1,14 +1,14 @@
-package org.flycraft.android.untildate.activities;
+package org.flycraft.android.untildate.ui.activities.editnote;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 
 import org.flycraft.android.untildate.R;
 import org.flycraft.android.untildate.data.Note;
 import org.flycraft.android.untildate.data.NotesStorage;
+import org.flycraft.android.untildate.ui.activities.addnote.AddNewNoteActivity;
 
-public class EditNoteActivity extends AddNoteActivity {
+public class EditNoteActivity extends AddNewNoteActivity {
 
     public static final String NOTE_POS_KEY = "notePos";
 
